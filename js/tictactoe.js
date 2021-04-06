@@ -13,6 +13,7 @@ $(document).ready(function() {
   let tieTally = 0;
 
   let activePlayer = "Player 1";
+  let activePlayerInitial = "Player 1";
 
   let squaresLeft = 9;
 
@@ -76,12 +77,19 @@ $(document).ready(function() {
   $('.reset-button').click(function(){
     if (gamesCalled === 1) {
       $('.square').text("");
-      activePlayer = "Player 1";
-      $('#current-turn').html('<mark>Player 1</mark>');
       squaresLeft = 9;
       gamesCalled = 0;
       $('h1').text("Let's Play!");
       winner = null;
+      if (activePlayerInitial === "Player 1") {
+        activePlayer = "Player 2";
+        activePlayerInitial = "Player 2";
+        $('#current-turn').html('<mark>Player 2</mark>');
+      } else {
+        activePlayer = "Player 1";
+        activePlayerInitial = "Player 1";
+        $('#current-turn').html('<mark>Player 1</mark>');
+      }
     }
     else {
       alert("Game in progress!");
