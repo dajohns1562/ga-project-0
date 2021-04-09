@@ -24,12 +24,12 @@ $(document).ready(function() {
     //updates the "current player text on screen so users know who's turn it is"
     $('.square').click(function() {
       squaresLeft = squaresLeft - 1;
-        if (($(this).text() === "") && activePlayer === "Player 1" && winner === null) {
+      if (($(this).text() === "") && activePlayer === "Player 1" && winner === null) {
           $(this).text(player1Icon);
           activePlayer = "Player 2";
           $('#current-turn').html('<mark>Player 2</mark>');
         }
-        if (($(this).text() === "") && activePlayer === "Player 2" && winner === null) {
+      if (($(this).text() === "") && activePlayer === "Player 2" && winner === null) {
           $(this).text(player2Icon);
           activePlayer = "Player 1";
           $('#current-turn').html('<mark>Player 1</mark>');
@@ -83,7 +83,7 @@ $(document).ready(function() {
 //this function resets the board, other relevant HTML elements (h1, current player, etc), active player variable etc.
 //function also ensures that if player 1 went first this game, player 2 will go first next game.
 //activePlayerInitial tracks who got the first move so first move can be alternated between players.
-//function will only run after a win has been declared so the board cannot be reset prematurely. 
+//function will only run after a win has been declared so the board cannot be reset prematurely.
   $('.reset-button').click(function(){
     if (gameCalled === true) {
       $('.square').text("");

@@ -26,10 +26,10 @@ The game was built using:
 
 **Board Construction**
 
-The board itself is made up of HTML elements, each with a unique id (numbered 1 - 9):
+The board itself is made up of div elements, each with a unique id (numbered 1 - 9):
 
 ```HTML
-<button id="1"></button>
+<div class="square odd" id="1"></div>
 ```
 
 As a player clicks a button, we use jQuery to populate the button with a value of either "X" or "0":
